@@ -21,5 +21,7 @@ public class Acme1_RegisterUser_o {
     public void RegisterUser(){
         Login l = new Login(driver);
 
+        l.clickLogin();
+
     }
 }
