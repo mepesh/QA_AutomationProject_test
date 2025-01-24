@@ -28,7 +28,6 @@ public class Login {
 
         WebElement verify = driver.findElement(By.xpath("//*[@id=\"header\"]/div/div/div/div[2]/div/ul/li[10]/a"));
         Assert.assertEquals(verify.getText(),"Logged in as dipesh");
-        
     }
 
 }
