@@ -32,5 +32,14 @@ public class Register {
         e.sendKeys(mail);
         driver.findElement(By.xpath("//*[@id=\"form\"]/div/div/div[3]/div/form/button")).click();
     }
+    public void clickSignupButton(){
+        WebElement signupbtn = driver.findElement(By.xpath("//*[@id=\"form\"]/div/div/div[3]/div/form/button"));
+        signupbtn.click();
+    }
+
+    public void verifyErrorSignup(){
+        WebElement errorMessage = driver.findElement(By.xpath("//*[@id=\"form\"]/div/div/div[3]/div/form/p"));
+        Assert.assertEquals(errorMessage.getText(),"Email Address already exist!");
+    }
 
 }
