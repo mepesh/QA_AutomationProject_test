@@ -1,5 +1,6 @@
 package Page_Objects;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -36,5 +37,27 @@ public class ContactUs {
 
     public void clickContactSubmit(){
         driver.findElement(By.xpath("//input[@name='submit']")).click();
+    }
+
+    //handling popups in selenium
+    public void popupOk(){
+        Alert alert = driver.switchTo().alert(); // switch to alert
+
+        String alertMessage= driver.switchTo().alert().getText(); // capture alert message
+        alert.accept();
+     //   alert.dismiss();
+//        System.out.println(alertMessage); // Print Alert Message
+//        try {
+//            Thread.sleep(5000);
+//        } catch (InterruptedException e) {
+//            throw new RuntimeException(e);
+//        }
+       // alert.accept();
+
+    }
+
+    public void checkSubmittedSuccess(){
+        WebElement message = driver.findElement(By.xpath("//*[@id=\"contact-page\"]/div[2]/div[1]/div/div[2]"));
+        Assert.assertEquals(message.getText(),"Success! Your details have been submitted successfully.");
     }
 }

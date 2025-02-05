@@ -28,5 +28,7 @@ public class Acme6_contactus_o {
                 "Inquiry", "Tell me about this");
         c.uploadFileByUrl("src/test/img/ismtFestia _card.png");
         c.clickContactSubmit();
+        c.popupOk();
+        c.checkSubmittedSuccess();
     }
 }
