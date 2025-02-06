@@ -2,6 +2,7 @@ import Page_Objects.ContactUs;
 import Page_Objects.Login;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -30,5 +31,9 @@ public class Acme6_contactus_o {
         c.clickContactSubmit();
         c.popupOk();
         c.checkSubmittedSuccess();
+    }
+    @AfterClass
+    public void CloseBrowser(){
+        driver.quit();
     }
 }
