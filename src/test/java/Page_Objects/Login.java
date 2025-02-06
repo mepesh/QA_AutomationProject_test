@@ -13,8 +13,9 @@ public class Login {
         this.driver = driver;
     }
 
+
     public void verifyHome(){
-        WebElement home = driver.findElement(By.xpath("//*[@id=\"header\"]/div/div/div/div[2]/div/ul/li[1]/a"));
+        WebElement home = driver.findElement(By.xpath("/html[1]/body[1]/header[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]/a[1]"));
         Assert.assertEquals(home.getText(),"Home");
     }
     public void clickLogin(){
