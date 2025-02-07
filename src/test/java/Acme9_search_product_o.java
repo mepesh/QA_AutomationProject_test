@@ -1,12 +1,10 @@
-import Page_Objects.Links;
 import Page_Objects.Product;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class Acme8_product_details_o {
+public class Acme9_search_product_o {
     WebDriver driver;
 
     @BeforeTest
@@ -19,16 +17,13 @@ public class Acme8_product_details_o {
         driver.get("https://automationexercise.com/");
     }
     @Test
-    public void productPage(){
+    public void SearchProduct(){
         Product p = new Product(driver);
         p.verifyHome();
         p.clickProducts();
         p.verifyProductsPage();
-        p.clickProductDetails();
-        p.productDetailPage();
-    }
-    @AfterClass
-    public void closeBrowser(){
-        driver.quit();
+        p.searchProduct("T-shirt");
+        p.verifyResultsPage();
+
     }
 }

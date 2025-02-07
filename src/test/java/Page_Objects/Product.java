@@ -24,6 +24,7 @@ public class Product{
     }
 
     public void clickProductDetails(){
+
         driver.findElement(By.cssSelector("a[href='/product_details/1']")).click();
     }
     public void productDetailPage(){
@@ -31,8 +32,19 @@ public class Product{
         Assert.assertEquals(driver.findElement(By.cssSelector("div[class='product-information'] h2")).getText(),"Blue Top");
        driver.findElement(By.xpath("//p[normalize-space()='Category: Women > Tops']")).getText().contains("Category");
        driver.findElement(By.xpath("//span[normalize-space()='Rs. 500']")).getText().contains("Rs.");
-
+       driver.findElement(By.xpath("//b[normalize-space()='Availability:']")).getText().contains("Availability");
+       driver.findElement(By.xpath("//b[normalize-space()='Condition:']")).getText().contains("Condition");
+       driver.findElement(By.xpath("//b[normalize-space()='Brand:']")).getText().contains("Brand");
     }
 
 
+    public void searchProduct(String productName) {
+        driver.findElement(By.xpath("//input[@id='search_product']")).sendKeys(productName);
+        driver.findElement(By.xpath("//button[@id='submit_search']")).click();
+    }
+
+    public void verifyResultsPage() {
+        WebElement sp = driver.findElement(By.xpath("//h2[normalize-space()='Searched Products']"));
+        Assert.assertEquals(sp.getText(),"SEARCHED PRODUCTS");
+    }
 }
