@@ -24,6 +24,7 @@ public class Acme9_search_product_o {
         p.verifyProductsPage();
         p.searchProduct("T-shirt");
         p.verifyResultsPage();
+        // verifying products in loop
 
     }
 }

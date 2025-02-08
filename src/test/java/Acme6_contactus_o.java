@@ -12,7 +12,6 @@ public class Acme6_contactus_o {
     @BeforeTest
     public void configureBrowser(){
         System.setProperty("webdriver.chrome.driver","src/test/ChromeDriver/chromedriver.exe");
-
         driver = new ChromeDriver();
         driver.manage().window().maximize();
 
