@@ -7,7 +7,8 @@ public class GoogleClassTest {
     @BeforeClass
 
     public void Setup(){
-        System.setProperty("webdriver.chrome.driver","src/test/ChromeDriver/chromedriver.exe");
+       // System.setProperty("webdriver.chrome.driver","src/test/ChromeDriver/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver","src/test/ChromeDriver/chromedriver");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://www.tutorialspoint.com/selenium/practice/selenium_automation_practice.php");

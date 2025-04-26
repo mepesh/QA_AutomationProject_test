@@ -10,7 +10,8 @@ public class TutPointExample {
     WebDriver driver;
     @BeforeTest
     public void OpenBrowser(){
-        System.setProperty("webdriver.chrome.driver","src/test/ChromeDriver/chromedriver.exe");
+      //  System.setProperty("webdriver.chrome.driver","src/test/ChromeDriver/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver","src/test/ChromeDriver/chromedriver");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
     }
@@ -39,7 +40,7 @@ public class TutPointExample {
         File uploadFile = new File("src/test/img/ismtFestia _card.png");
         WebElement fileUpload = driver.findElement(By.id("picture"));
         fileUpload.sendKeys(uploadFile.getAbsolutePath());
-
+/*
         //selector state
         WebElement stateDropdown = driver.findElement(By.id("state"));
         Select stateSelect = new Select(stateDropdown);
@@ -48,10 +49,10 @@ public class TutPointExample {
         WebElement cityDropdown = driver.findElement(By.id("city"));
         Select citySelector = new Select(cityDropdown);
         citySelector.selectByVisibleText("Lucknow");
-
+*/
         //login button
-        WebElement loginbutton = driver.findElement(By.xpath("//*[@id=\"practiceForm\"]/div[11]/input"));
-        loginbutton.click();
+      //  WebElement loginbutton = driver.findElement(By.xpath("//*[@id=\"practiceForm\"]/div[11]/input"));
+      //  loginbutton.click();
 
     }
 

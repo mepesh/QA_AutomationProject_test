@@ -12,7 +12,8 @@ public class Acme12_addtoCart_o {
 
     @BeforeTest
     public void configureBrowser(){
-        System.setProperty("webdriver.chrome.driver","src/test/ChromeDriver/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver","src/test/ChromeDriver/chromedriver");
+      //  System.setProperty("webdriver.chrome.driver","src/test/ChromeDriver/chromedriver.exe");
 
         driver = new ChromeDriver();
         driver.manage().window().maximize();
