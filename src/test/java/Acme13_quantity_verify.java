@@ -1,3 +1,4 @@
+import Page_Objects.Product;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
@@ -19,6 +20,13 @@ public class Acme13_quantity_verify
     }
     @Test
     public void QuantityVerify(){
+        Product p = new Product(driver);
+        p.homepageViewProduct();
+        p.productDetailPage();
+        p.updateProductQuanity(4);
+        p.addTocart();
+        p.viewChart();
+
 
     }
     @AfterTest
