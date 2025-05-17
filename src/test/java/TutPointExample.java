@@ -55,6 +55,10 @@ public class TutPointExample {
       //  loginbutton.click();
 
     }
+    @AfterTest
+    public void close(){
+        driver.close();
+    }
 
 
 }
