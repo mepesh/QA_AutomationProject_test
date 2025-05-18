@@ -23,9 +23,10 @@ public class Acme13_quantity_verify
         Product p = new Product(driver);
         p.homepageViewProduct();
         p.productDetailPage();
-        p.updateProductQuanity(4);
+        p.updateProductQuanity();
         p.addTocart();
-        p.viewChart();
+        p.viewCart();
+        p.viewCartQuantity();
 
 
     }

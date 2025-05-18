@@ -34,12 +34,12 @@ public class Acme12_addtoCart_o {
             throw new RuntimeException(e);
         }
         //p.addToCartSecond();
-        p.viewChart();
+        p.viewCart();
 
     }
 
     @AfterTest
     public void closeBrowser(){
-       // driver.quit();
+       driver.quit();
     }
 }

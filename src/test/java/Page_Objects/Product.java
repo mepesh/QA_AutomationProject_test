@@ -4,9 +4,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
-import javax.swing.*;
+import java.time.Duration;
 
 public class Product{
     WebDriver driver;
@@ -55,9 +57,10 @@ public class Product{
     }
     // https://automationexercise.com/product_details/1
     // details page update quantity.
-    public void updateProductQuanity(int n){
+    public void updateProductQuanity(){
         driver.findElement(By.xpath("//input[@id='quantity']")).clear();
         driver.findElement(By.xpath("//input[@id='quantity']")).sendKeys("4");
+
     }
 
     //https://automationexercise.com/product_details/1
@@ -77,31 +80,27 @@ public class Product{
         Assert.assertEquals(sp.getText(),"SEARCHED PRODUCTS");
     }
 
+    public void viewCart() {
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+        // WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("a[href='/view_cart'] u")));
+        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"cartModal\"]/div/div/div[2]/p[2]/a/u")));
+        element.click();
+
+    }
+    // https://automationexercise.com/view_cart
+    public void viewCartQuantity(){
+        //error here
+        WebElement qty = driver.findElement(By.cssSelector("#product-2 > td.cart_quantity"));
+        String qtty = qty.getText();
+        Assert.assertEquals(qtty,"4");
+    }
+
 
     public void addToCart() {
 
     }
 
     public void addToCartSecond() {
-    }
-
-    public void viewChart() {
-        WebElement success = driver.findElement(By.cssSelector(".modal-content"));
-        Actions a = new Actions(driver);
-        a.moveToElement(success);
-        WebElement popupViewChart = driver.findElement(By.xpath("//*[@id=\"cartModal\"]/div/div/div[2]/p[2]/a"));
-        popupViewChart.click();
-        //WebElement view = driver.findElement(By.xpath("//body//section//p[2]"));
-              //  view.click();
-
-//        WebElement element = driver.findElement(By.cssSelector(".modal-content"));
-//        Actions actions = new Actions(driver);
-//        actions.moveToElement(element);
-//
-//        WebElement a = driver.findElement(By.xpath("/html/body/section/div/div/div[2]/div[1]/div/div/div[2]/p[2]/a"));
-//        System.out.println(a.getText().toString());
-//        // error in click operation
-//        a.click();
-
     }
 }
